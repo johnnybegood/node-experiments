@@ -62,9 +62,21 @@
     <Content Include="public\css\bootstrap.min.css" />
     <Content Include="public\img\glyphicons-halflings-white.png" />
     <Content Include="public\img\glyphicons-halflings.png" />
+    <Content Include="public\js\app.js" />
+    <Content Include="public\js\collections\devices.js" />
+    <Content Include="public\js\backbone.js" />
     <Content Include="public\js\bootstrap.js" />
     <Content Include="public\css\bootstrap-responsive.min.css" />
-    <Content Include="public\js\bootstrap.min.js" />
+    <Content Include="public\js\client.js" />
+    <Content Include="public\js\templates\devices.html" />
+    <Content Include="public\js\text.js" />
+    <Content Include="public\js\underscore.js" />
+    <Content Include="public\js\models\device.js" />
+    <Content Include="public\js\require.js" />
+    <Content Include="public\js\templates\device.html" />
+    <Content Include="public\js\views\devices.js" />
+    <Content Include="public\js\views\row.js" />
+    <Content Include="routes\devices.js" />
     <Content Include="server.js" />
     <Content Include="nodelib\assert.js" />
     <Content Include="nodelib\buffer.js" />
@@ -97,7 +109,6 @@
     <Content Include="nodelib\vm.js" />
     <Content Include="nodelib\zlib.js" />
     <Content Include="routes\index.js" />
-    <Content Include="routes\user.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -105,7 +116,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="package.json" />
-    <Content Include="views\index.hulk" />
+    <Content Include="views\index.html" />
+    <Content Include="public\css\homegate.less" />
+    <Content Include="public\css\layout.less" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

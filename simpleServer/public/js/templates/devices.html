@@ -1,0 +1,18 @@
+﻿<h1>Devices</h1>
+<div class="row">
+    <div class="span10">Link to devices inside your home and all around the internet to interact with them and controll them.</div>
+    <div class="span2"><a id="add-device" class="btn btn-primary">Add device</a></div>
+</div>
+<form id="device-editor" class="form-inline">
+    <label for="newDeviceName">Name</label>
+    <input type="text" placeholder="Device name" id="newDeviceName" name="newDeviceName" />
+    <label for="newDeviceType">Kind of device</label>
+    <a id="save-device" class="btn btn-success">Add device</a>
+</form>
+
+<table class="row span12">
+    <thead>
+        <tr><th>Name</th><th>Type of device</th></tr>
+    </thead>
+    <tbody id="allDevices"></tbody>
+</table>

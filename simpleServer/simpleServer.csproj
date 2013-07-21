@@ -57,6 +57,14 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="public\css\bootstrap-responsive.css" />
+    <Content Include="public\css\bootstrap.css" />
+    <Content Include="public\css\bootstrap.min.css" />
+    <Content Include="public\img\glyphicons-halflings-white.png" />
+    <Content Include="public\img\glyphicons-halflings.png" />
+    <Content Include="public\js\bootstrap.js" />
+    <Content Include="public\css\bootstrap-responsive.min.css" />
+    <Content Include="public\js\bootstrap.min.js" />
     <Content Include="server.js" />
     <Content Include="nodelib\assert.js" />
     <Content Include="nodelib\buffer.js" />
@@ -105,11 +113,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="public\images\" />
-    <Folder Include="public\javascripts\" />
-    <Folder Include="public\stylesheets\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

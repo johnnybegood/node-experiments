@@ -1,1 +1,16 @@
-﻿<h2>Testing with {{title}}?</h2>
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home Gate</title>
+    <link href="public/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+	<div class="container">
+	    <h1>Home Gate</h1>
+	</div>
+
+    <!-- Scripts -->
+	<script src="http://code.jquery.com/jquery.js"></script>
+    <script src="public/js/bootstrap.min.js"></script>
+  </body>
+</html>

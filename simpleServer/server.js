@@ -6,7 +6,8 @@ var express = require('express')
   , http = require('http')
   , path = require('path')
   , less = require('less')
-  , hulk = require('hulk-hogan');
+  , hulk = require('hulk-hogan')
+  , deviceTypes = require('./routes/deviceTypes');
 
 var app = express();
 
@@ -29,6 +30,7 @@ if ('development' == app.get('env')) {
 
 app.get('/', routes.index);
 app.get('/devices', devices.list);
+app.get("/deviceTypes", deviceTypes.list);
 
 http.createServer(app).listen(app.get('port'), function () {
     console.log('Express server listening on port ' + app.get('port'));

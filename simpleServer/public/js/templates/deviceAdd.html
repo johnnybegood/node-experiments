@@ -1,7 +1,7 @@
 ﻿<input type="text" placeholder="Device name" id="newDeviceName" name="newDeviceName" />
 
 <select id="newDeviceType" name="newDeviceType">
-    <option>Type of device</option>
+    <option value="" disabled selected>Type of device</option>
     <% _.each(items , function( item ){ %>
         <option value="<%= item.code%>"><%= item.name%></option>
     <% }); %>

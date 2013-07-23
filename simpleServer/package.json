@@ -9,6 +9,7 @@
     "express": "3.x",
     "hulk-hogan": "*",
     "less": "*",
-	"less-middleware": "*"
+	"less-middleware": "*",
+	"mongoose": "*"
   }
 }

@@ -4,28 +4,27 @@
         "backbone",
         "collections/devices",
         "text!templates/devices.html",
-        "views/row"
+        "views/deviceRow",
+        "views/deviceAdd"
     ],
-    function (_, $, backbone, devices, template, rowView) {
+    function (_, $, backbone, devices, template, rowView, addDeviceView) {
         "use strict";
 
         var devicesView = backbone.View.extend({
             template: _.template(template),
+            addView: new addDeviceView(),
             events: {
                 "click #add-device": "showAddDevice",
-                "click #save-device": "saveDevice"
             },
 
-            collection: new devices(),
-
-            initialize: function() {
-                this.listenTo(this.collection, "add", this.addOne);
-                this.collection.fetch();
+            initialize: function () {
+                this.listenTo(devices, "add", this.addOne);
+                this.addView.on("save", this.saveNewDevice);
+                devices.fetch();
             },
             
             render: function() {
                 this.$el.html(this.template());
-                this.$el.find("#device-editor").hide();
                 return this;
             },
 
@@ -35,13 +34,14 @@
             },
 
             showAddDevice: function() {
-                $("#device-editor").show();
+                $("#device-add-view").html(this.addView.render().el).show();
                 $("#add-device").hide();
             },
-
-            saveDevice: function() {
-                var item = { Name: $("#newDeviceName").val(), Type: $("#newDeviceType").val() };
-                this.collection.create(item);
+            
+            saveNewDevice: function(device) {
+                devices.create(device);
+                $("#device-add-view").hide();
+                $("#add-device").show();
             }
         });
 

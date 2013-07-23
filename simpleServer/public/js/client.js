@@ -1,7 +1,6 @@
 ﻿requirejs.config({
     "baseUrl": "js",
     "paths": {
-        "app": "app",
         "jquery": "//code.jquery.com/jquery"
     },
     shim: {
@@ -19,11 +18,10 @@
     }
 });
 
-requirejs([
-    'app',
-    'backbone',
-    'bootstrap'
-], function (app, backbone, bootstrap) {
+require([
+    "views/master",
+    "bootstrap"
+], function (masterView, bootstrap) {
     // this is where all the site code should begin
-    new app();
+    new masterView().render();
 });

@@ -3,7 +3,7 @@
         "jquery",
         "backbone",
         "models/device",
-        "text!templates/device.html"
+        "text!templates/deviceRow.html"
     ],
     function(_, $, backbone, device, template) {
         var rowView = Backbone.View.extend({

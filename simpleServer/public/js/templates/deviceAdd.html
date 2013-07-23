@@ -1,0 +1,10 @@
+﻿<input type="text" placeholder="Device name" id="newDeviceName" name="newDeviceName" />
+
+<select id="newDeviceType" name="newDeviceType">
+    <option>Type of device</option>
+    <% _.each(items , function( item ){ %>
+        <option value="<%= item.code%>"><%= item.name%></option>
+    <% }); %>
+</select>
+
+<a id="save-device" class="btn btn-success" title="Save device"><i class="icon-ok icon-white"></i></a>

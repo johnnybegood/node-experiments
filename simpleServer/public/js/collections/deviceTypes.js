@@ -10,5 +10,5 @@
             url: '/deviceTypes'
         });
 
-        return deviceTypeCollection;
+        return new deviceTypeCollection();
     });

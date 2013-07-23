@@ -10,5 +10,5 @@
             url: '/devices'
         });
 
-        return deviceCollection;
+        return new deviceCollection();
     });

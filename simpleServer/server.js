@@ -1,13 +1,10 @@
 ﻿// <reference path="./nodelib/node.js"/>
 
 var express = require('express')
-  , routes = require('./routes')
-  , devices = require('./routes/devices')
   , http = require('http')
   , path = require('path')
   , less = require('less')
   , hulk = require('hulk-hogan')
-  , deviceTypes = require('./routes/deviceTypes')
   , mongoose = require('mongoose');
 
 var app = express();
@@ -28,11 +25,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 if ('development' == app.get('env')) {
     app.use(express.errorHandler());
 }
-
-app.get('/', routes.index);
-app.get('/devices', devices.list);
-app.get("/deviceTypes", deviceTypes.list);
-app.post("/devices", devices.create);
+require('./controllers')(app);
+require('./controllers/devices')(app);
+require('./controllers/deviceTypes')(app);
 
 http.createServer(app).listen(app.get('port'), function () {
     console.log('Express server listening on port ' + app.get('port'));

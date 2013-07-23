@@ -80,8 +80,8 @@
     <Content Include="public\js\views\devices.js" />
     <Content Include="public\js\views\master.js" />
     <Content Include="public\js\views\deviceRow.js" />
-    <Content Include="routes\devices.js" />
-    <Content Include="routes\deviceTypes.js" />
+    <Content Include="controllers\devices.js" />
+    <Content Include="controllers\deviceTypes.js" />
     <Content Include="server.js" />
     <Content Include="nodelib\assert.js" />
     <Content Include="nodelib\buffer.js" />
@@ -113,7 +113,7 @@
     <Content Include="nodelib\util.js" />
     <Content Include="nodelib\vm.js" />
     <Content Include="nodelib\zlib.js" />
-    <Content Include="routes\index.js" />
+    <Content Include="controllers\index.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

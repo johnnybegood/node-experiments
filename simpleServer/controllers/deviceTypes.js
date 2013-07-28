@@ -3,11 +3,9 @@
  */
 
 module.exports = function (app) {
-    var deviceTypes = [
-        { name: "Device Type 1", code: "d1" },
-        { name: "Device Type 2", code: "d2" }];
+    var types = require("../deviceTypes");
 
     app.get("/devicetypes", function(req, res) {
-        res.send(deviceTypes);
+        res.send(types.all());
     });
 };

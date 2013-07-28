@@ -57,6 +57,10 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="deviceTypes\connection.js" />
+    <Content Include="deviceTypes\index.js" />
+    <Content Include="deviceTypes\ir\index.js" />
+    <Content Include="deviceTypes\prototype.js" />
     <Content Include="public\css\bootstrap-responsive.css" />
     <Content Include="public\css\bootstrap.css" />
     <Content Include="public\css\bootstrap.min.css" />

@@ -3,23 +3,30 @@
         "jquery",
         "backbone",
         "collections/devices",
+        "collections/deviceTypes",
         "text!templates/devices.html",
         "views/deviceRow",
         "views/deviceAdd"
     ],
-    function (_, $, backbone, devices, template, rowView, addDeviceView) {
+    function (_, $, backbone, devices, types, template, rowView, addDeviceView) {
         "use strict";
 
         var devicesView = backbone.View.extend({
             template: _.template(template),
             addView: new addDeviceView(),
+            activeRow: undefined,
             events: {
                 "click #add-device": "showAddDevice",
+                "click tbody tr": "showOptions",
+                "mouseover tbody tr": "showHoverOptions",
+                "click .delete-device": "deleteDevice"
             },
 
             initialize: function () {
                 this.listenTo(devices, "add", this.addOne);
                 this.addView.on("save", this.saveNewDevice);
+
+                types.fetch();
                 devices.fetch();
             },
             
@@ -42,7 +49,36 @@
                 devices.create(device);
                 $("#device-add-view").hide();
                 $("#add-device").show();
+            },
+            
+            deleteDevice: function(e) {
+                var row = $(e.currentTarget).parents("tr");
+                var item = devices.get(row.data("id"));
+                item.destroy();
+                
+                e.preventDefault();
+            },
+            
+            showHoverOptions: function (e) {
+                var row = $(e.currentTarget);
+                this.showOptions(e);
+
+                this.$el.one("mouseout", "tbody tr", function() {
+                    $(row).find(".rowOptions").hide();
+                });
+            },
+            
+            showOptions: function (e) {
+                var row = $(e.currentTarget);
+                var options = row.find(".rowOptions");
+
+                options.show();
+                $(".rowOptions").not(options).hide();
+                
+                e.preventDefault();
             }
+            
+
         });
 
         return devicesView;

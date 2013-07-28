@@ -3,7 +3,9 @@
     function (backbone) {
         'use strict';
 
-        var deviceTypeModel = backbone.Model.extend({});
+        var deviceTypeModel = backbone.Model.extend({
+            idAttribute: "code"
+        });
 
         return deviceTypeModel;
     });

@@ -37,5 +37,9 @@
         return res.send(device);
     });
 
+    app.delete("/devices/:id", function(req, res) {
+
+    });
+
     return app;
 };

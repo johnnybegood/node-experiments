@@ -16,7 +16,7 @@
             },
 
             initialize: function() {
-                types.fetch();
+
             },
 
             render: function() {

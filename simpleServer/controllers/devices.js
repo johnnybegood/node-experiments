@@ -38,7 +38,14 @@
     });
 
     app.delete("/devices/:id", function(req, res) {
-
+        var id = req.params.id;
+        deviceModel.remove({ _id: id }, function(err) {
+            if (err) {
+                return console.log(err);
+            } else {
+                return console.log("deleted device " + id);
+            }
+        });
     });
 
     return app;

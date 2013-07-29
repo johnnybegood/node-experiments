@@ -49,36 +49,7 @@
                 devices.create(device);
                 $("#device-add-view").hide();
                 $("#add-device").show();
-            },
-            
-            deleteDevice: function(e) {
-                var row = $(e.currentTarget).parents("tr");
-                var item = devices.get(row.data("id"));
-                item.destroy();
-                
-                e.preventDefault();
-            },
-            
-            showHoverOptions: function (e) {
-                var row = $(e.currentTarget);
-                this.showOptions(e);
-
-                this.$el.one("mouseout", "tbody tr", function() {
-                    $(row).find(".rowOptions").hide();
-                });
-            },
-            
-            showOptions: function (e) {
-                var row = $(e.currentTarget);
-                var options = row.find(".rowOptions");
-
-                options.show();
-                $(".rowOptions").not(options).hide();
-                
-                e.preventDefault();
             }
-            
-
         });
 
         return devicesView;

@@ -12,6 +12,11 @@
             template: _.template(template),
             model: device,
             types: types,
+            events: {
+                "click td": "showOptions",
+                "mouseover td": "showHoverOptions",
+                "click .delete-device": "deleteDevice"
+            },
 
             render: function() {
                 this.$el.html(this.template(this.extendModel()))
@@ -30,6 +35,26 @@
                 }
 
                 return item;
+            },
+            
+            deleteDevice: function (e) {
+                this.model.destroy();
+                this.remove();
+
+                e.preventDefault();
+            },
+
+            showHoverOptions: function (e) {
+                this.showOptions(e);
+                var rowOptions = this.$el.find(".rowOptions");
+
+                this.$el.one("mouseout", function() { rowOptions.hide(); });
+            },
+
+            showOptions: function (e) {
+                this.$el.find(".rowOptions").show();
+
+                e.preventDefault();
             }
         });
 

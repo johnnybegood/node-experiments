@@ -24,7 +24,6 @@
 
             initialize: function () {
                 this.listenTo(devices, "add", this.addOne);
-                //this.addView.on("save", this.saveNewDevice);
 
                 types.fetch();
                 devices.fetch();
@@ -42,12 +41,12 @@
 
             showAddDevice: function () {
                 var view = new addDeviceView({ model: new deviceModel() });
+                view.once("created", this.saveNewDevice);
                 $("#device-add-view").html(view.render().el).show();
                 $("#add-device").hide();
             },
             
-            saveNewDevice: function(device) {
-                devices.create(device);
+            saveNewDevice: function() {
                 $("#device-add-view").hide();
                 $("#add-device").show();
             }

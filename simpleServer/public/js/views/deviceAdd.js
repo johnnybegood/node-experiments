@@ -35,7 +35,6 @@
                 
                 if (this.model.isValid(true)) {
                     deviceCollection.create(this.model);
-                    this.$el.hide();
                     this.trigger("created", this.model);
                     notifier.success("Device <strong>" + data.name + "</strong> was successfully saved", this);
                 } else {

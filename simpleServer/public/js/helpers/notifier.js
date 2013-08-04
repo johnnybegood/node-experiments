@@ -23,7 +23,8 @@
             }
             
             function clearOlderAlerts(origin) {
-                _.each(_.where(notifications, { origin: origin }), function(x) {
+                _.each(_.where(notifications, { origin: origin }), function (x) {
+                    notifications.splice(_.indexOf(notifications, x), 1);
                     $(x.el).remove();
                 });
             }
@@ -51,8 +52,8 @@
             return {
                 warning: _.partial(alert, null, "warning"),
                 error: _.partial(alert, null, "error"),
-                success: _.partial(alert, 1500, "success"),
-                info: _.partial(alert, 2000, "info"),
+                success: _.partial(alert, 3000, "success"),
+                info: _.partial(alert, 3000, "info"),
             };
         };
 

@@ -37,8 +37,9 @@
                     deviceCollection.create(this.model);
                     this.$el.hide();
                     this.trigger("created", this.model);
+                    notifier.success("Device <strong>" + data.name + "</strong> was successfully saved", this);
                 } else {
-                    notifier.error("<strong>Oops,</strong> it appears the device you are trying to create is not valid");
+                    notifier.error("<strong>Oops,</strong> it appears the device you are trying to create is not valid", this);
                 }
                 
             }

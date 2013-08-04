@@ -72,6 +72,7 @@
     <Content Include="public\css\bootstrap-responsive.min.css" />
     <Content Include="public\js\client.js" />
     <Content Include="public\js\collections\deviceTypes.js" />
+    <Content Include="public\js\helpers\notifier.js" />
     <Content Include="public\js\models\deviceType.js" />
     <Content Include="public\js\templates\deviceAdd.html" />
     <Content Include="public\js\templates\devices.html" />
@@ -128,6 +129,7 @@
     <Content Include="views\index.html" />
     <Content Include="public\css\homegate.less" />
     <Content Include="public\css\layout.less" />
+    <Content Include="public\js\backbone.validation.js" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

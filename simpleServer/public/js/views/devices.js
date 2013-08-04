@@ -2,18 +2,18 @@
         "underscore",
         "jquery",
         "backbone",
+        "models/device",
         "collections/devices",
         "collections/deviceTypes",
         "text!templates/devices.html",
         "views/deviceRow",
         "views/deviceAdd"
     ],
-    function (_, $, backbone, devices, types, template, rowView, addDeviceView) {
+    function (_, $, backbone, deviceModel, devices, types, template, rowView, addDeviceView) {
         "use strict";
 
         var devicesView = backbone.View.extend({
             template: _.template(template),
-            addView: new addDeviceView(),
             activeRow: undefined,
             events: {
                 "click #add-device": "showAddDevice",
@@ -24,7 +24,7 @@
 
             initialize: function () {
                 this.listenTo(devices, "add", this.addOne);
-                this.addView.on("save", this.saveNewDevice);
+                //this.addView.on("save", this.saveNewDevice);
 
                 types.fetch();
                 devices.fetch();
@@ -40,8 +40,9 @@
                 $("#allDevices").append(view.render().el);
             },
 
-            showAddDevice: function() {
-                $("#device-add-view").html(this.addView.render().el).show();
+            showAddDevice: function () {
+                var view = new addDeviceView({ model: new deviceModel() });
+                $("#device-add-view").html(view.render().el).show();
                 $("#add-device").hide();
             },
             

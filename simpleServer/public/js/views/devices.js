@@ -1,15 +1,17 @@
-﻿define([
-        "underscore",
-        "jquery",
-        "backbone",
-        "models/device",
-        "collections/devices",
-        "collections/deviceTypes",
-        "text!templates/devices.html",
-        "views/deviceRow",
-        "views/deviceAdd"
-    ],
-    function (_, $, backbone, deviceModel, devices, types, template, rowView, addDeviceView) {
+﻿/*global define*/
+define([
+    "underscore",
+    "jquery",
+    "backbone",
+    "models/device",
+    "collections/devices",
+    "collections/deviceTypes",
+    "text!templates/devices.html",
+    "views/deviceRow",
+    "views/deviceAdd"
+],
+    function (_, $, backbone,
+        deviceModel, devices, types, template, rowView, addDeviceView) {
         "use strict";
 
         var devicesView = backbone.View.extend({
@@ -28,13 +30,13 @@
                 types.fetch();
                 devices.fetch();
             },
-            
-            render: function() {
+
+            render: function () {
                 this.$el.html(this.template());
                 return this;
             },
 
-            addOne: function(item) {
+            addOne: function (item) {
                 var view = new rowView({ model: item });
                 $("#allDevices").append(view.render().el);
             },
@@ -45,8 +47,8 @@
                 $("#device-add-view").html(view.render().el).show();
                 $("#add-device").hide();
             },
-            
-            saveNewDevice: function() {
+
+            saveNewDevice: function () {
                 $("#device-add-view").hide();
                 $("#add-device").show();
             }

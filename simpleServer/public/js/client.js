@@ -1,7 +1,12 @@
 ﻿requirejs.config({
-    "baseUrl": "js",
-    "paths": {
-        "jquery": "//code.jquery.com/jquery"
+    baseUrl: "js",
+    paths: {
+        jquery: "//code.jquery.com/jquery",
+        backbone: "lib/backbone",
+        "backbone.validation" : "lib/backbone.validation",
+        bootstrap: "lib/bootstrap",
+        text: "lib/text",
+        underscore: "lib/underscore"
     },
     shim: {
         underscore: {

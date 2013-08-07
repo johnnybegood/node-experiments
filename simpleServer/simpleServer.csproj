@@ -67,8 +67,8 @@
     <Content Include="public\img\glyphicons-halflings-white.png" />
     <Content Include="public\img\glyphicons-halflings.png" />
     <Content Include="public\js\collections\devices.js" />
-    <Content Include="public\js\backbone.js" />
-    <Content Include="public\js\bootstrap.js" />
+    <Content Include="public\js\lib\backbone.js" />
+    <Content Include="public\js\lib\bootstrap.js" />
     <Content Include="public\css\bootstrap-responsive.min.css" />
     <Content Include="public\js\client.js" />
     <Content Include="public\js\collections\deviceTypes.js" />
@@ -76,10 +76,10 @@
     <Content Include="public\js\models\deviceType.js" />
     <Content Include="public\js\templates\deviceAdd.html" />
     <Content Include="public\js\templates\devices.html" />
-    <Content Include="public\js\text.js" />
-    <Content Include="public\js\underscore.js" />
+    <Content Include="public\js\lib\text.js" />
+    <Content Include="public\js\lib\underscore.js" />
     <Content Include="public\js\models\device.js" />
-    <Content Include="public\js\require.js" />
+    <Content Include="public\js\lib\require.js" />
     <Content Include="public\js\templates\deviceRow.html" />
     <Content Include="public\js\views\deviceAdd.js" />
     <Content Include="public\js\views\devices.js" />
@@ -129,7 +129,7 @@
     <Content Include="views\index.html" />
     <Content Include="public\css\homegate.less" />
     <Content Include="public\css\layout.less" />
-    <Content Include="public\js\backbone.validation.js" />
+    <Content Include="public\js\lib\backbone.validation.js" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

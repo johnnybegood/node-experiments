@@ -30,10 +30,9 @@
             },
 
             save: function () {
-                var data = { name: $("#newDeviceName").val(), type: $("#newDeviceType").val() };
-                this.model.set(data);
+                var data = { name: this.$("#name").val(), type: this.$("#type").val() };
                 
-                if (this.model.isValid(true)) {
+                if (this.model.set(data, {validate: true})) {
                     deviceCollection.create(this.model);
                     this.trigger("created", this.model);
                     notifier.success("Device <strong>" + data.name + "</strong> was successfully saved", this);

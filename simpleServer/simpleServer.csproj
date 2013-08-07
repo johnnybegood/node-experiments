@@ -64,6 +64,7 @@
     <Content Include="public\css\bootstrap-responsive.css" />
     <Content Include="public\css\bootstrap.css" />
     <Content Include="public\css\bootstrap.min.css" />
+    <Content Include="public\css\homegroup.css" />
     <Content Include="public\img\glyphicons-halflings-white.png" />
     <Content Include="public\img\glyphicons-halflings.png" />
     <Content Include="public\js\collections\devices.js" />

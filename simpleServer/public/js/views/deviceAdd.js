@@ -17,6 +17,7 @@
             
             events: {
                 "click #save-device": "save",
+                "mouseover .invalid": "showError"
             },
 
             initialize: function() {
@@ -26,6 +27,7 @@
             render: function() {
                 this.$el.html(this.template({ items: types.toJSON() }));
                 validation.bind(this);
+
                 return this;
             },
 
@@ -39,7 +41,18 @@
                 } else {
                     notifier.error("<strong>Oops,</strong> it appears the device you are trying to create is not valid", this);
                 }
-                
+            },
+            
+            showError: function(e) {
+                $(e.currentTarget).tooltip({
+                    title: function () { return $(this).data("error"); },
+                    trigger: "manual",
+                    placement: "bottom"
+                });
+
+                $(e.currentTarget).one("mouseout", function() { $(e.currentTarget).tooltip("destroy"); });
+
+                $(e.currentTarget).tooltip("show");
             }
         });
 

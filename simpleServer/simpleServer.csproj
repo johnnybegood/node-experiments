@@ -64,10 +64,11 @@
     <Content Include="public\css\bootstrap-responsive.css" />
     <Content Include="public\css\bootstrap.css" />
     <Content Include="public\css\bootstrap.min.css" />
-    <Content Include="public\css\homegroup.css" />
     <Content Include="public\img\glyphicons-halflings-white.png" />
     <Content Include="public\img\glyphicons-halflings.png" />
     <Content Include="public\js\collections\devices.js" />
+    <Content Include="public\js\deviceTypes\templates\ip2ir-options.html" />
+    <Content Include="public\js\deviceTypes\itach-ip2ir.js" />
     <Content Include="public\js\lib\backbone.js" />
     <Content Include="public\js\lib\bootstrap.js" />
     <Content Include="public\css\bootstrap-responsive.min.css" />
@@ -75,6 +76,7 @@
     <Content Include="public\js\collections\deviceTypes.js" />
     <Content Include="public\js\helpers\notifier.js" />
     <Content Include="public\js\models\deviceType.js" />
+    <Content Include="public\js\router.js" />
     <Content Include="public\js\templates\deviceAdd.html" />
     <Content Include="public\js\templates\devices.html" />
     <Content Include="public\js\lib\text.js" />
@@ -84,7 +86,6 @@
     <Content Include="public\js\templates\deviceRow.html" />
     <Content Include="public\js\views\deviceAdd.js" />
     <Content Include="public\js\views\devices.js" />
-    <Content Include="public\js\views\master.js" />
     <Content Include="public\js\views\deviceRow.js" />
     <Content Include="controllers\devices.js" />
     <Content Include="controllers\deviceTypes.js" />
@@ -138,7 +139,10 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="public\js\deviceTypes\collections\" />
+    <Folder Include="public\js\deviceTypes\models\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

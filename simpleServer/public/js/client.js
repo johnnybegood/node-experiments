@@ -24,9 +24,11 @@
 });
 
 require([
-    "views/master",
+    "router",
+    "backbone",
     "bootstrap"
-], function (masterView, bootstrap) {
+], function (router, backbone, bootstrap) {
     // this is where all the site code should begin
-    new masterView().render();
+    var appRouter = new router();
+    backbone.history.start();
 });

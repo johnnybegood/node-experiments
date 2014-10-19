@@ -19,7 +19,7 @@
 				'jquery'
             ],
             exports: 'Backbone'
-        },
+        }
     }
 });
 
@@ -30,5 +30,5 @@ require([
 ], function (router, backbone, bootstrap) {
     // this is where all the site code should begin
     var appRouter = new router();
-    backbone.history.start();
+    backbone.history.start({pushState:true});
 });

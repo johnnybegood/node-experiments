@@ -7,9 +7,10 @@
         "models/device",
         "collections/devices",
         "backbone.validation",
-        "helpers/notifier"
+        "helpers/notifier",
+        "router"
     ],
-    function(_, $, backbone, types, template, device, deviceCollection, validation, notifier) {
+    function(_, $, backbone, types, template, device, deviceCollection, validation, notifier, router) {
         "use strict";
 
         var devicesView = backbone.View.extend({
@@ -38,6 +39,7 @@
                     deviceCollection.create(this.model);
                     this.trigger("created", this.model);
                     notifier.success("Device <strong>" + data.name + "</strong> was successfully saved", this);
+                    backbone.history.navigate("options/" + data.type + "/" + data.id)
                 } else {
                     notifier.error("<strong>Oops,</strong> it appears the device you are trying to create is not valid", this);
                 }
